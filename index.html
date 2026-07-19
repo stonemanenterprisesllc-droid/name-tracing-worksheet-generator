@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Name Tracing Worksheet Maker — Free Printable Handwriting Practice</title>
+<meta name="description" content="Make a free printable name tracing worksheet in seconds. Type any name, pick a letter style, and print handwriting practice sheets. No sign-up, no downloads.">
+<link rel="canonical" href="https://nametracing.clickabletools.com/">
+<style>
+:root{--accent:#0369a1;--accent-dark:#075985}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6;color:#1f2937;background:#f8fafc}
+header{background:var(--accent);color:#fff;padding:1rem}
+header .wrap{max-width:760px;margin:0 auto}
+header a{color:#fff;text-decoration:none;font-weight:700;font-size:1.2rem}
+main{max-width:760px;margin:0 auto;padding:1rem}
+h1{font-size:1.5rem;margin:.75rem 0 .25rem}
+.tagline{color:#6b7280;margin-bottom:1rem}
+.tool{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1rem;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+label{font-weight:600;display:block;margin:.75rem 0 .25rem}
+input[type=text]{width:100%;padding:.6rem;border:2px solid #d1d5db;border-radius:8px;font-size:1rem;font-family:inherit}
+input[type=text]:focus{outline:none;border-color:var(--accent)}
+.opts{margin:.5rem 0}
+.opts summary{cursor:pointer;color:var(--accent);font-weight:600}
+.opts .grp{margin:.5rem 0}
+.opts label{display:inline-flex;align-items:center;gap:.4rem;font-weight:400;margin:.25rem 1rem .25rem 0}
+select{padding:.45rem;border:2px solid #d1d5db;border-radius:8px;font-size:1rem;font-family:inherit}
+.row{display:flex;gap:.5rem;flex-wrap:wrap;margin:.75rem 0}
+.btn{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:.7rem 1.4rem;font-size:1.05rem;font-weight:700;cursor:pointer}
+.btn:hover{background:var(--accent-dark)}
+.btn.alt{background:#fff;color:var(--accent);border:2px solid var(--accent);font-weight:600}
+.ad-slot{margin:1rem 0}
+#sheet{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.5rem;margin-top:1rem;display:none}
+#sheet h2.title{text-align:center;font-size:1.3rem;margin-bottom:.25rem;font-family:system-ui,sans-serif}
+#sheet .sub{text-align:center;color:#9ca3af;font-size:.85rem;margin-bottom:1.25rem}
+.trace{font-family:"Comic Sans MS","Chalkboard SE","Segoe Print",cursive}
+.line{position:relative;border-top:1px solid #cbd5e1;border-bottom:2px solid #94a3b8;margin-bottom:1.1rem;overflow:hidden;white-space:nowrap}
+.line::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px dashed #d1d5db}
+.line .txt{display:inline-block;line-height:1.05;padding-top:.1em;letter-spacing:.06em}
+.model .txt{color:var(--accent-dark)}
+.faded .txt{color:#cbd5e1}
+.outline .txt{color:transparent;-webkit-text-stroke:1.2px #94a3b8}
+article h2{margin:1.5rem 0 .5rem;font-size:1.2rem}
+article p,article li{margin:.5rem 0}
+article ul{padding-left:1.4rem}
+footer{max-width:760px;margin:2rem auto;padding:1rem;font-size:.85rem;color:#6b7280;border-top:1px solid #e5e7eb}
+footer a{color:#6b7280;margin-right:1rem}
+@media print{
+ body{background:#fff}
+ header,main>*:not(#sheet),footer,.noprint{display:none!important}
+ #sheet{display:block!important;border:none;box-shadow:none;padding:0}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="./">Name Tracing Worksheet Maker</a></div></header>
+<main>
+<h1>Free Printable Name Tracing Worksheet Maker</h1>
+<p class="tagline">Type a name, choose a style, and print handwriting practice sheets — instantly.</p>
+
+<div class="tool">
+<label for="name">Name (or short word) to practice</label>
+<input type="text" id="name" placeholder="Emma" maxlength="20" value="Emma">
+<details class="opts">
+<summary>Options</summary>
+<div class="grp">
+<label for="style" style="display:block">Tracing style</label>
+<select id="style">
+ <option value="faded" selected>Faded gray letters (trace over)</option>
+ <option value="outline">Hollow outline letters (trace inside)</option>
+</select>
+</div>
+<div class="grp">
+<label for="lettercase" style="display:block">Letter case</label>
+<select id="lettercase">
+ <option value="title" selected>Title case (Emma)</option>
+ <option value="upper">UPPERCASE (EMMA)</option>
+ <option value="lower">lowercase (emma)</option>
+</select>
+</div>
+<div class="grp">
+<label for="rows" style="display:block">Tracing rows</label>
+<select id="rows"><option>4</option><option selected>6</option><option>8</option><option>10</option></select>
+</div>
+<div class="grp">
+<label><input type="checkbox" id="optModel" checked> Bold example row at the top</label>
+<label><input type="checkbox" id="optBlank" checked> Add blank practice lines</label>
+</div>
+</details>
+<div class="row">
+<button class="btn" id="make">Make Worksheet</button>
+<button class="btn alt noprint" id="print" style="display:none">🖨 Print Worksheet</button>
+</div>
+</div>
+
+<div class="ad-slot" data-ad="top"></div>
+
+<div id="sheet" aria-live="polite">
+<h2 class="title" id="sheetTitle">Name Tracing</h2>
+<p class="sub">Trace each row carefully. Stay between the lines.</p>
+<div class="trace" id="lines"></div>
+</div>
+
+<article>
+<h2>How to make a name tracing worksheet</h2>
+<p>Type a child's name (or any short word) in the box, choose whether you want
+<strong>faded gray letters</strong> to trace over or <strong>hollow outline letters</strong> to
+trace inside, and press <strong>Make Worksheet</strong>. Your practice sheet appears with the
+name repeated across dotted-midline handwriting rows. Press <strong>Print Worksheet</strong> and
+your browser prints a clean page — no buttons, menus, or ads on the printout.</p>
+<h2>Who uses this name tracing maker?</h2>
+<ul>
+<li><strong>Preschool &amp; pre-K teachers</strong> — one worksheet per child so every student practices their own name.</li>
+<li><strong>Kindergarten teachers</strong> — sight words and classmates' names for early handwriting centers.</li>
+<li><strong>Parents &amp; homeschoolers</strong> — practice a first name, last name, or the days of the week at home.</li>
+<li><strong>Occupational therapists</strong> — large, guided letters for fine-motor and pencil-control practice.</li>
+</ul>
+<h2>Tips for teaching name writing</h2>
+<p>Start with <em>UPPERCASE</em> or <em>Title case</em> — a capital first letter followed by
+lowercase is how a name is really written, so it builds the right habit early. The dashed middle
+line shows where lowercase letters like <em>a</em>, <em>e</em>, and <em>m</em> should reach. Have
+the child trace slowly two or three times, then use the blank practice lines at the bottom to
+write the name on their own. Short names (3–6 letters) work best for beginners.</p>
+<h2>How this generator works</h2>
+<p>The name is placed onto printable handwriting guide lines — a top line, a dashed midline, and a
+solid baseline — then repeated to fill each row. Everything is generated right in your browser, so
+nothing you type is uploaded or stored. Change the name and print as many different sheets as you
+like, free and unlimited.</p>
+</article>
+
+<div class="ad-slot" data-ad="bottom"></div>
+</main>
+
+<footer>
+<p><a href="./">Home</a> <a href="about.html">About</a> <a href="privacy.html">Privacy Policy</a> <a href="terms.html">Terms of Use</a></p>
+<p>&copy; 2026 Name Tracing Worksheet Maker. All rights reserved.</p>
+<p>More free tools:
+<a href="https://wordscramble.clickabletools.com/">Word Scramble Maker</a>
+<a href="https://fillintheblank.clickabletools.com/">Fill-in-the-Blank Story</a>
+<a href="https://pictionary.clickabletools.com/">Pictionary Word Generator</a>
+<a href="https://wouldyourather.clickabletools.com/">Would You Rather</a></p>
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+function applyCase(s,c){
+ if(c==='upper')return s.toUpperCase();
+ if(c==='lower')return s.toLowerCase();
+ return s.replace(/\S+/g,w=>w.charAt(0).toUpperCase()+w.slice(1).toLowerCase());
+}
+function lineHTML(text,cls){
+ const per=Math.max(1,Math.floor(26/(text.length+2)));
+ const seg=Array(per).fill(text).join('    ');
+ const size=text.length>10?'2rem':text.length>6?'2.6rem':'3.1rem';
+ return `<div class="line ${cls}"><span class="txt" style="font-size:${size}">${seg}</span></div>`;
+}
+function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function build(){
+ let name=$('name').value.trim();
+ if(!name){alert('Please type a name or word to practice.');return;}
+ name=applyCase(esc(name),$('lettercase').value);
+ const style=$('style').value, rows=+$('rows').value;
+ $('sheetTitle').textContent='Name Tracing — '+name;
+ let html='';
+ if($('optModel').checked)html+=lineHTML(name,'model');
+ for(let i=0;i<rows;i++)html+=lineHTML(name,style);
+ if($('optBlank').checked)for(let i=0;i<2;i++)html+='<div class="line"><span class="txt" style="font-size:3.1rem"> </span></div>';
+ $('lines').innerHTML=html;
+ $('sheet').style.display='block';
+ $('print').style.display='inline-block';
+ $('sheet').scrollIntoView({behavior:'smooth'});
+}
+$('make').addEventListener('click',build);
+$('print').addEventListener('click',()=>window.print());
+</script>
+</body>
+</html>
